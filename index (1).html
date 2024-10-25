@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Consulting</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        color: #ffffff;
+        background-color: #f3f3f3;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .header-section{
+        background-color: #0f0f0f;
+        padding-top: 20px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .logo-square {
+        width: 40px;
+        height: 40px;
+        background-color: #FFC800;
+        margin-right: 10px;
+      }
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 10px;
+        font-weight: 600;
+      }
+       nav a:hover{
+        border-bottom: 2px solid #FFC800;
+       } 
+      .btn {
+        background-color: transparent;
+        border: 2px solid #FFC800;
+        color: #FFC800;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+      }
+      .btn:hover {
+        background-color: #FFC800;
+        color: #0f0f0f;
+      }
+
+      .hero-section{
+        margin: 0 auto;
+
+        background-color: #0f0f0f;
+      }
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+        overflow: hidden;
+      }
+      .hero-content {
+        padding: 80px 0;
+        /* flex: 1; */
+      }
+      .hero h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #FFC800;
+      }
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+      .hero h1 span {
+        color: #FFC800;
+      }
+      .hero p {
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      .feature {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+      .feature-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #FFC800;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .hero-buttons .btn {
+        margin-right: 10px;
+      }
+      .btn-primary {
+        background-color: #FFC800;
+        color: white;
+      }
+      .hero-image {
+        flex: 1;
+        position: relative;
+        height: 510px;
+      }
+      .hero-image img {
+        position: absolute;
+        bottom: 0;
+        height: 80%;
+        border-radius: 10px;
+        z-index: 2;
+      }
+      .image-bg {
+        bottom: -25px;
+        left: -70px;
+        position: absolute;
+        width: 100%;
+        height: 120%;
+        z-index: 1;
+      }
+
+      .stats {
+        background-color: #ffffff;
+        color: #0f0f0f;
+        padding: 50px 0;
+      }
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 36px;
+        font-weight: bold;
+      }
+      .stat-number.active {
+        color: #FFC800;
+      }
+      .help-section {
+        background-color: #f0f0f0;
+        color: #0f0f0f;
+        padding: 80px 0;
+      }
+      .help-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+      .help-cards {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+      }
+      .help-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 48%;
+        max-width: 376px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .help-card img {
+        width: 100%;
+        height: 366px;
+      }
+      .help-card-content {
+        padding: 30px 16px ;
+      }
+      .help-card h3 {
+        margin-bottom: 15px;
+        font-size: 22px;
+      }
+      .help-card .btn {
+        background-color: #FFC800;
+        color: white;
+        border: none;
+        margin: 0 auto;
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 20px;
+        min-width: 160px;
+        
+      }
+      .sessions-section {
+        padding: 80px 0;
+        background-color: #f3f3f3;
+        color:#07080E;
+      }
+      .sessions-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      .sessions-subtitle {
+        margin-bottom: 50px;
+        font-size: 18px;
+      }
+      .session-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .session-card {
+        background-color: #1a1a1a;
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        transition: all 0.3s ease;
+      }
+      .session-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+        color: white;
+        background-color: black;
+      }
+      .session-icon {
+        width: 60px;
+        height: 60px;
+        background-color: #FFC800;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      .session-card h3 {
+        margin-bottom: 15px;
+        font-size: 22px;
+      }
+      .session-card .btn {
+        background-color: #FFC800;
+        color: white;
+
+        padding: 8px 32px;
+        border: none;
+        margin-top: 20px;
+        font-size: 16px;
+      }
+      .promise-section {
+        background-color: #1a1a1a;
+
+        padding: 80px 0;
+      }
+      .promise-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .promise-image {
+        flex: 1;
+        margin-right: 50px;
+      }
+      .promise-image img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .promise-text {
+        width: 40%;
+      }
+      .promise-title {
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+      .promise-list {
+        list-style-type: none;
+      }
+      .promise-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+      .promise-icon {
+        width: 24px;
+        height: 24px;
+        background-color: #FFC800;
+        border-radius: 50%;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+      .sectors-section {
+        padding: 80px 0;
+        color: black;
+      }
+      .sectors-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .sectors-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+      .sector-card {
+        position: relative;
+        aspect-ratio: 1;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .sector-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sector-card span {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .who-am-i {
+        background-color: #0f0f0f;
+        color: #ffffff;
+        padding: 80px 0;
+      }
+      .who-am-i-content {
+        display: flex;
+        align-items: center;
+      }
+      .who-am-i-text {
+        flex: 1;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .who-am-i-text h2 {
+        font-size: 36px;
+        color: #FFC800;
+      }
+      .who-am-i-text h3 {
+        font-size: 24px;
+      }
+      .who-am-i-text a {
+        width: fit-content;
+        padding: 8px 32px;
+      }
+      .who-am-i-image {
+        flex: 1;
+      }
+      .who-am-i-image img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .testimonials {
+        background-color: #f3f3f3;
+        color: #0f0f0f;
+        padding: 80px 0;
+      }
+      .testimonials h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .testimonial-container{
+        background-color: white;
+        padding: 60px;
+        border-radius: 15px;
+
+      }
+      .testimonial-card {
+        display: flex;
+        border-radius: 10px;
+        width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .testimonial-image {
+        flex: 1;
+        background-color: #FFC800;
+      }
+      .testimonial-content {
+        flex: 2;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        color: #000D5199;
+      }
+      .testimonial-content h2 {
+        font-size: 24px;
+        color: #000000;
+        margin-bottom: 20px;
+      }
+      .testimonial-quote {
+        font-size: 72px;
+        color: #FFC800;
+        line-height: 1;
+        margin-top: -40px;
+        align-self: end;
+      }
+
+      .testimonial-footer{
+        display: flex;
+        flex-direction: column;
+      }
+      .testimonial-footer span{
+        &:first-child{
+          color: #000000;
+        }
+        &:last-child{
+          font-size: 12px;
+          color: #00000080;
+        }
+      }
+      .faq-section {
+        color: #000000;
+        padding: 20px 0;
+      }
+      .faq-section h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .faq-item {
+        border-bottom: 1px solid #333;
+        padding: 20px 0;
+      }
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+      .faq-question h3 {
+        font-size: 20px;
+      }
+      .faq-answer {
+        display: none;
+        padding-top: 20px;
+      }
+      .latest-news {
+        background-color: #f0f0f0;
+        padding: 80px 0;
+      }
+      .latest-news h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+        text-align: center;
+        color: #0f0f0f;
+      }
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .news-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .news-card img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+      .news-card-content {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        color: #000000;
+      }
+      .news-card-content span {
+        color: #00000080;
+      }
+      .news-card-content a {
+        color: #00000080;
+        text-decoration: unset !important;
+      }
+      .news-card-content h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #0f0f0f;
+      }
+      .learn-more-section {
+        padding: 80px 0;
+        color: #000000;
+      }
+      .learn-more-section h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .resource-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #333;
+      }
+      .resource-item:last-child {
+        border-bottom: none;
+      }
+      .resource-item span {
+        font-size: 18px;
+      }
+.resource-item a {
+    text-decoration: unset ;
+    color: #000000;
+}
+
+.resource-item a:hover {
+    text-decoration: underline;
+}
+
+      footer {
+        background-color: #0f0f0f;
+        color: #ffffff;
+        padding: 80px 0;
+      }
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer-column {
+        flex: 1;
+        margin-right: 40px;
+      }
+      .footer-column:last-child {
+        margin-right: 0;
+      }
+      .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #FFC800;
+      }
+      .footer-column ul {
+        list-style-type: none;
+      }
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+      .footer-column ul li a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      .social-icons a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      footer form input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
+      footer form button {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-section">
+    <header class="container">
+        <div class="logo">
+          <div class="logo-square"></div>
+          <span>BUSINESS CONSULTING</span>
+        </div>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Services</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <a href="#" class="btn">Get in touch</a>
+
+      </header>
+    </div>
+
+
+    <section class="hero-section" >
+      <div class="hero container">
+
+        <div class="hero-content">
+          <h2>BUSINESS CONSULTING</h2>
+          <h1>Transform Yourself<br />From <span>VYAPARI TO CEO</span></h1>
+          <p>Achieve the Freedom for Which You Actually Started the Business</p>
+          <div class="features">
+            <div class="feature">
+              <div class="feature-dot"></div>
+              <span>Strategic excellence</span>
+            </div>
+            <div class="feature">
+              <div class="feature-dot"></div>
+              <span>Business consulting</span>
+            </div>
+            <div class="feature">
+              <div class="feature-dot"></div>
+              <span>Innovation</span>
+            </div>
+          </div>
+          <div class="hero-buttons">
+            <a href="#" class="btn ">Yes, I want to be a CEO</a>
+            <a href="#" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://i.postimg.cc/KYGYBZcq/rahul-malodia-net-worth-1-removebg-preview-1.png"
+            alt="Business consultant"
+          />
+          <div class="image-bg"><img
+            src="https://i.postimg.cc/x8vr6ztK/Frame-483.png"
+            alt="Business consultant"
+          /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-container">
+        <div class="stat">
+          <div class="stat-number active">155,300+</div>
+          <div>Supported businesses</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">450+</div>
+          <div>Cities</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">1k+</div>
+          <div>Webinar</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">900M</div>
+          <div>Views</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-section">
+      <div class="container">
+        <h2 class="help-title">Here's How Can I Help You?</h2>
+        <div class="help-cards">
+          <div class="help-card">
+            <img
+              src="https://rahulmalodia.com/wp-content/uploads/2023/11/RMD-02_-min-1024x1024.jpg?height=300&width=400"
+              alt="VYAPARI TO CEO"
+            />
+            <div class="help-card-content">
+              <h3>VYAPARI TO CEO</h3>
+              <p>
+                If you are unable to manage your employees, your business, your
+                time, or your money, let me show you the exact secret...
+              </p>
+              <a href="#" class="btn">Details →</a>
+            </div>
+          </div>
+          <div class="help-card">
+            <img
+              src="https://rahulmalodia.com/wp-content/uploads/2023/11/RMD-02_-min-1024x1024.jpg?height=300&width=400"
+              alt="BUSINESS FREEDOM ADVANCE"
+            />
+            <div class="help-card-content">
+              <h3>BUSINESS FREEDOM ADVANCE</h3>
+              <p>
+                If you are unable to manage your employees, your business, your
+                time, or your money, let me show you the exact secret...
+              </p>
+              <a href="#" class="btn">Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sessions-section container">
+      <h2 class="sessions-title">Here's What You Will Learn In My Sessions</h2>
+      <p class="sessions-subtitle">
+        By Mastering Just These 4 Aspects Of Business, You Can Build A True You
+        Need To Grow As A CEO Rather Than Managing A Everyday Sacrificing Your
+        Life.
+      </p>
+      <div class="session-cards">
+        <div class="session-card">
+          <div class="session-icon"></div>
+          <h3>Employee Mastery</h3>
+          <p>
+            Learn how to effectively manage and motivate your team for optimal
+            performance and productivity.
+          </p>
+          <a href="#" class="btn">Details →</a>
+        </div>
+        <div class="session-card">
+          <div class="session-icon"></div>
+          <h3>Accounts Mastery</h3>
+          <p>
+            Master financial management to make informed decisions and drive
+            your business's growth.
+          </p>
+          <a href="#" class="btn">Details →</a>
+        </div>
+        <div class="session-card">
+          <div class="session-icon"></div>
+          <h3>Sales Mastery</h3>
+          <p>
+            Develop strategies to boost your sales and expand your customer base
+            effectively.
+          </p>
+          <a href="#" class="btn">Details →</a>
+        </div>
+        <div class="session-card">
+          <div class="session-icon"></div>
+          <h3>Mindset Mastery</h3>
+          <p>
+            Cultivate a CEO mindset to lead your business with confidence and
+            vision.
+          </p>
+          <a href="#" class="btn">Details →</a>
+        </div>
+        <div class="session-card">
+          <div class="session-icon"></div>
+          <h3>Digital Technology</h3>
+          <p>
+            Harness the power of digital tools to streamline operations and stay
+            competitive.
+          </p>
+          <a href="#" class="btn">Details →</a>
+        </div>
+        <div class="session-card">
+          <div class="session-icon"></div>
+          <h3>Human Resources</h3>
+          <p>
+            Learn best practices in HR to build and maintain a strong, motivated
+            workforce.
+          </p>
+          <a href="#" class="btn">Details →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise-section">
+      <div class="container promise-content">
+        <div class="promise-image">
+          <img
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=400&width=400"
+            alt="Business consultant"
+          />
+        </div>
+        <div class="promise-text">
+          <h2 class="promise-title">I Can Promise That</h2>
+          <ul class="promise-list">
+            <li class="promise-item">
+              <div class="promise-icon"></div>
+              <span
+                >Freedom from everyday business Activities, connecting back to
+                Old Life</span
+              >
+            </li>
+            <li class="promise-item">
+              <div class="promise-icon"></div>
+              <span
+                >More time for Business strategy, less for managing the
+                workforce</span
+              >
+            </li>
+            <li class="promise-item">
+              <div class="promise-icon"></div>
+              <span
+                >Creating a system that leads your organization to work without
+                your monitoring</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectors-section container">
+      <h2 class="sectors-title">What sectors of the economy do we serve</h2>
+      <div class="sectors-grid">
+        <div class="sector-card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200" alt="Real Estate" />
+          <span>Real Estate</span>
+        </div>
+        <div class="sector-card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200" alt="Agriculture" />
+          <span>Agriculture</span>
+        </div>
+        <div class="sector-card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200" alt="Travel" />
+          <span>Travel</span>
+        </div>
+        <div class="sector-card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200" alt="Automotive" />
+          <span>Automotive</span>
+        </div>
+        <div class="sector-card">
+          <img
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200"
+            alt="Financial Services"
+          />
+          <span>Financial Services</span>
+        </div>
+        <div class="sector-card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200" alt="Construction" />
+          <span>Construction</span>
+        </div>
+        <div class="sector-card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200" alt="Retail" />
+          <span>Retail</span>
+        </div>
+        <div class="sector-card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=200" alt="Logistic" />
+          <span>Logistic</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="who-am-i">
+      <div class="container who-am-i-content">
+        <div class="who-am-i-text">
+          <h2>Who am I?</h2>
+          <h3>
+            A Business Coach in India on a Mission To Transform Every VYAPARI to
+            CEO!
+          </h3>
+          <p>
+            I am committed to helping you achieve your goals so you can live the
+            life you've always dreamed of. With my proven system, you'll be able
+            to scale your business to new heights and experience the freedom and
+            success you deserve.
+          </p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="who-am-i-image">
+          <img
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=400&width=400"
+            alt="Business Coach"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="testimonial-image"></div>
+            <div class="testimonial-content">
+              <h2>Testimonials</h2>
+              <p>
+                The business consulting services provided were transformative for
+                my company. The strategies implemented helped us streamline our
+                operations and significantly boost our revenue. I highly recommend
+                this service to any business looking to grow and optimize their
+                processes.
+              </p>
+              <div class="testimonial-footer">
+                <span>Lorene Hudson</span>
+                <span >CEO / Ritchie Group</span>
+
+              </div>
+              <div class="testimonial-quote">"</div>
+            </div>
+
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section container">
+      <h2>FAQ's</h2>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>
+            How does your approach to networking differ from other business
+            clubs?
+          </h3>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Our approach focuses on creating meaningful connections and
+            fostering collaborative relationships. We emphasize quality over
+            quantity, ensuring that each interaction has the potential to add
+            value to your business.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What makes your business consulting services unique?</h3>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Our services are tailored to each client's specific needs and goals.
+            We combine industry expertise with innovative strategies to provide
+            comprehensive solutions that drive tangible results for your
+            business.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>
+            How long does it typically take to see results from your consulting
+            services?
+          </h3>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            The timeline for results can vary depending on the specific
+            challenges and goals of each business. However, many of our clients
+            start seeing positive changes within the first few months of
+            implementing our strategies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="latest-news">
+      <div class="container">
+        <h2>Latest news</h2>
+        <div class="news-grid">
+          <div class="news-card">
+            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=520&width=300" alt="News 1" />
+            <div class="news-card-content">
+              <span>25.01.24 / Business consulting</span>
+              <h3>Building business agility begins with culture</h3>
+              <a href="#">Read more →</a>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=300" alt="News 2" />
+            <div class="news-card-content"><span>25.01.24 / Business consulting</span>
+              <h3>Strategies to protect your business from inflation</h3>
+              <a href="#">Read more →</a>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png?height=200&width=300" alt="News 3" />
+            <div class="news-card-content"><span>25.01.24 / Business consulting</span>
+              <h3>We Bring Flexibility & Cost Efficiency</h3>
+              <a href="#">Read more →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn-more-section container">
+      <h2>
+        To Learn More About Passion, Sales, Entrepreneurship, Speaking, Money,
+        and More!
+      </h2>
+      <div class="resource-item">
+        <span>Writing your success script</span>
+        <a href="#" >Download →</a>
+      </div>
+      <div class="resource-item">
+        <span>Navigating your path to prosperity</span>
+        <a href="#" >Download →</a>
+      </div>
+      <div class="resource-item">
+        <span>Contribute to business success?</span>
+        <a href="#" >Download →</a>
+      </div>
+      <div class="resource-item">
+        <span>Unleashing potential together</span>
+        <a href="#" >Download →</a>
+      </div>
+      <div class="resource-item">
+        <span>Blueprinting success stories</span>
+        <a href="#" >Download →</a>
+      </div>
+      <div class="resource-item">
+        <span>Where ideas become triumphs</span>
+        <a href="#" >Download →</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-column">
+          <div class="logo">
+            <div class="logo-square"></div>
+            <span>BUSINESS CONSULTING</span>
+          </div>
+          <p>
+            Empowering businesses to reach their full potential through expert
+            consulting and innovative strategies.
+          </p>
+          <div class="social-icons">
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+            <a href="#">IN</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Marketing Strategy</a></li>
+            <li><a href="#">Financial Management</a></li>
+            <li><a href="#">Business Consulting</a></li>
+            <li><a href="#">Sales and Marketing</a></li>
+            <li><a href="#">Human Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Useful Links</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Subscribe to our newsletter</h3>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple JavaScript to toggle FAQ answers
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          answer.style.display =
+            answer.style.display === "block" ? "none" : "block";
+          question.querySelector("span").textContent =
+            answer.style.display === "block" ? "-" : "+";
+        });
+      });
+    </script>
+  </body>
+</html>
